@@ -49,13 +49,12 @@ public class EmailReader extends javax.swing.JFrame {
         passwordLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         passwordLabel.setText("Password:");
 
-        emailText.addActionListener(new java.awt.event.ActionListener() {
+        connectButton.setText("Connect");
+        connectButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                emailTextActionPerformed(evt);
+                connectButtonActionPerformed(evt);
             }
         });
-
-        connectButton.setText("Connect");
 
         javax.swing.GroupLayout connectPanelLayout = new javax.swing.GroupLayout(connectPanel);
         connectPanel.setLayout(connectPanelLayout);
@@ -126,10 +125,24 @@ public class EmailReader extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void emailTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailTextActionPerformed
+    private void connectButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_connectButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_emailTextActionPerformed
+        String address = emailText.getText();
+        String password = passwordText.getText();
+        System.out.println("email is: " + address + " ; password is: " + password);
+        if(connectToEmail(address, password)){
+            //go to a new page here
+        }
+        else{
+            //set up warning here
+        }
+    }//GEN-LAST:event_connectButtonActionPerformed
 
+    private boolean connectToEmail(String address, String password){
+        
+        return true;
+    }
+    
     /**
      * @param args the command line arguments
      */
